@@ -82,6 +82,65 @@
     }
 }
 
+.stats-section {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 2rem;
+        padding: 1vw 4vw;
+    }
+
+    .card {
+        flex: 1 1 20%;
+        margin-top: 3rem;
+        padding: 5vh 10vh;
+        align-items: center;
+        background-color: $white;
+        border: .1vw solid $light-color-hover;
+
+        .icon-users {
+            font-size: 2.5em;
+            font-weight: 400;
+            &::before {
+                color: $primary-color;
+            }
+        }
+
+        .icon-dollar {
+            font-size: 2.5em;
+            font-weight: 400;
+            &::before {
+                color: $secondary-color;
+            }
+        }
+
+        .icon-recycle {
+            font-size: 2.5em;
+            font-weight: 400;
+            &::before {
+                color: $primary-color;
+            }
+        }
+
+        .icon-graph_arrow {
+            font-size: 2.5em;
+            font-weight: 400;
+            &::before {
+                color: #5353f8;
+            }
+        }
+
+        .title {
+            margin-top: 30px;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
 // media queries
 @media (max-width: 600px) {
     .hero-section {

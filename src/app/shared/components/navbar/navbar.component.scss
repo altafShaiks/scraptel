@@ -38,7 +38,9 @@
 
 // media queries
 @media (max-width: 600px) {
-    .navbar .nav-links ul {
-        display: none;
+    .navbar { 
+        .nav-links ul, .nav-buttons {
+            display: none;
+        }
     }
 }

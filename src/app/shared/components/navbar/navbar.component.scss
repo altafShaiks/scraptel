@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/theme.scss';
+
+.navbar {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 4vw;
+}
+
+.nav-links ul {
+    width: 20vw;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.nav-buttons {
+    .login, .register {
+        padding: .6vw;
+        margin-left: 1vw;
+        border-radius: .5vw;
+    }
+
+    .login {
+        background-color: $white;
+        border: .1vw solid $light-color-hover;
+    }
+
+    .register {
+        background-color: $primary-color;
+        color: $white;
+        border: none;
+    }
+
+}

@@ -1,6 +1,100 @@
 @use '../../../assets/styles/theme.scss' as *;
 
 .hero-section {
-    height: calc(100% - 80px);
+    height: auto;
     background-color: $background-color;
+    position: relative;
+    padding: 10vw 20vw;
+
+    .container {
+        p {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 4vh;
+            font-size: 3vh;
+            text-align: center;
+        }
+    }
+}
+
+.tagline {
+    text-align: center;
+    font-size: 8vh;
+    text-transform: capitalize;
+    font-weight: 800;
+
+    span {
+        color: $primary-color;
+    }
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    button {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &.calculate-value-now {
+            background-color: $primary-color;
+            color: $light-color;
+
+            &:hover {
+                background-color: $primary-color-hover;
+            }
+        }
+
+        &.how-it-works {
+            background-color: $secondary-color;
+            color: $light-color;
+
+            &:hover {
+                background-color: $secondary-color-hover;
+            }
+        }
+    }
+}
+
+.why-scraptel {
+    margin-top: 2rem;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8vw;
+        list-style-type: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                margin-right: 1vh;
+            }
+        }
+    }
+}
+
+// media queries
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 10vw 8vw;
+    }
+
+    .tagline {
+        font-size: 6vh;
+    }
+
+    .action-buttons {
+        button {
+            font-size: .8rem;
+        }
+    }
 }

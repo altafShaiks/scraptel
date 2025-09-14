@@ -10,9 +10,9 @@
 }
 
 .nav-links ul {
-    width: 20vw;
     display: flex;
     justify-content: space-between;
+    gap: 3vw;
     list-style-type: none;
 }
 
@@ -33,14 +33,22 @@
         color: $white;
         border: none;
     }
+}
 
+.hamburger-menu {
+    display: none;
 }
 
 // media queries
 @media (max-width: 600px) {
-    .navbar { 
+    .navbar {
         .nav-links ul, .nav-buttons {
             display: none;
         }
+    }
+    .hamburger-menu {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
     }
 }

@@ -1,0 +1,28 @@
+@use '../styles/variables.scss' as *;
+
+@mixin button-base($bg, $hover-bg, $text-color: #fff) {
+  padding: $button-padding;
+  font-size: $button-font-size;
+  border: none;
+  border-radius: $button-radius;
+  cursor: pointer;
+  background-color: $bg;
+  color: $text-color;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-bg;
+  }
+}
+
+@mixin text-start {
+  text-align: start;
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+@mixin capitalize {
+  text-transform: capitalize;
+}

@@ -1,14 +1,15 @@
 <app-navbar></app-navbar>
 
 <!-- hero section -->
- <div class="hero-section">
-    <div class="container">
-      <h1 class="tagline">turn your scrap into <span>cold hard cash</span></h1>
-      <p>Get fair prices for your metal, electronics, plastic, and more. Free pickup, instant payment, and eco-friendly recycling.</p>
-      <div class="action-buttons">
-            <button class="calculate-value-now">Calculate value now</button>
-            <button class="how-it-works">How it works</button>
-        </div>
+ <section class="hero-section">
+    <div class="header">
+      <h1 class="heading">turn your scrap into <span>cold hard cash</span></h1>
+      <p class="tagline">Get fair prices for your metal, electronics, plastic, and more. Free pickup, instant payment, and eco-friendly recycling.</p>
+    </div>
+    <div class="action-buttons">
+        <button class="calculate-value-now">Calculate value now</button>
+        <button class="how-it-works">How it works</button>
+    </div>
         <div class="why-scraptel">
             <ul>
                 <li>
@@ -25,12 +26,11 @@
                 </li>
             </ul>
         </div>
-    </div>
- </div>
+ </section>
 
  <!-- stats section -->
-<div class="stats-section">
-    <div class="container">
+<section class="stats-section">
+    <div class="stats-cards">
         <mat-card class="card">
             <mat-card-header>
                 <mat-card-title class="icon-users"></mat-card-title>
@@ -76,99 +76,100 @@
             </mat-card-footer>
         </mat-card>
     </div>
-</div>
+</section>
 
 <!-- what we accept section  -->
-<div class="what-we-accept-section">
-    <div class="container">
-        <h1 class="title">What We Accept</h1>
+<section class="what-we-accept-section">
+    <div class="header">
+        <h1 class="heading">What We Accept</h1>
         <p class="tagline">Turn your scrap into cash. We accept a wide variety of materials with competitive pricing.
         </p>
-
-        <div class="category-cards">
-            <mat-card class="card" appearance="outlined">
-                <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
-                <mat-card-content>
-                    <h2 class="title">Metals</h2>
-                    <p class="matching-items">
-                    Copper, aluminum, iron, steel, brass
-                    </p>
-                    <div class="price-box">
-                        <p class="price-label">Current Price:</p>
-                        <p class="price-range">$2.50 - $8.50/kg</p>
-                    </div>
-                    <div class="examples">
-                        <p class="example-label">Examples:</p>
-                        <div class="chips">
-                            <mat-chip-set>
-                                <mat-chip selected>Copper pipes</mat-chip>
-                                <mat-chip selected>Aluminum cans</mat-chip>
-                                <mat-chip selected>Steel sheets</mat-chip>
-                            </mat-chip-set>
-                        </div>
-                    </div>
-
-                </mat-card-content>
-                <mat-card-actions>
-                    <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="card" appearance="outlined">
-                <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
-                <mat-card-content>
-                    <h2 class="title">Metals</h2>
-                    <p class="matching-items">
-                    Copper, aluminum, iron, steel, brass
-                    </p>
-                    <div class="price-box">
-                        <p class="price-label">Current Price:</p>
-                        <p class="price-range">$2.50 - $8.50/kg</p>
-                    </div>
-                    <div class="examples">
-                        <p class="example-label">Examples:</p>
-                        <div class="chips">
-                            <mat-chip-set>
-                                <mat-chip selected>Copper pipes</mat-chip>
-                                <mat-chip selected>Aluminum cans</mat-chip>
-                                <mat-chip selected>Steel sheets</mat-chip>
-                            </mat-chip-set>
-                        </div>
-                    </div>
-
-                </mat-card-content>
-                <mat-card-actions>
-                    <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="card" appearance="outlined">
-                <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
-                <mat-card-content>
-                    <h2 class="title">Metals</h2>
-                    <p class="matching-items">
-                    Copper, aluminum, iron, steel, brass
-                    </p>
-                    <div class="price-box">
-                        <p class="price-label">Current Price:</p>
-                        <p class="price-range">$2.50 - $8.50/kg</p>
-                    </div>
-                    <div class="examples">
-                        <p class="example-label">Examples:</p>
-                        <div class="chips">
-                            <mat-chip-set>
-                                <mat-chip selected>Copper pipes</mat-chip>
-                                <mat-chip selected>Aluminum cans</mat-chip>
-                                <mat-chip selected>Steel sheets</mat-chip>
-                            </mat-chip-set>
-                        </div>
-                    </div>
-
-                </mat-card-content>
-                <mat-card-actions>
-                    <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-
     </div>
+    <div class="category-cards">
+        <mat-card class="card" appearance="outlined">
+            <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
+            <mat-card-content>
+                <h5 class="title">Metals</h5>
+                <p class="matching-items">
+                Copper, aluminum, iron, steel, brass
+                </p>
+                <div class="price-box">
+                    <p class="price-label">Current Price:</p>
+                    <p class="price-range">$2.50 - $8.50/kg</p>
+                </div>
+                <div class="examples">
+                    <p class="example-label">Examples:</p>
+                    <div class="chips">
+                        <mat-chip-set>
+                            <mat-chip class="matching-item-name" selected>Copper pipes</mat-chip>
+                            <mat-chip class="matching-item-name" selected>Aluminum cans</mat-chip>
+                            <mat-chip class="matching-item-name" selected>Steel sheets</mat-chip>
+                        </mat-chip-set>
+                    </div>
+                </div>
 
-</div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="card" appearance="outlined">
+            <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
+            <mat-card-content>
+                <h5 class="title">Metals</h5>
+                <p class="matching-items">
+                Copper, aluminum, iron, steel, brass
+                </p>
+                <div class="price-box">
+                    <p class="price-label">Current Price:</p>
+                    <p class="price-range">$2.50 - $8.50/kg</p>
+                </div>
+                <div class="examples">
+                    <p class="example-label">Examples:</p>
+                    <div class="chips">
+                        <mat-chip-set>
+                            <mat-chip selected>Copper pipes</mat-chip>
+                            <mat-chip selected>Aluminum cans</mat-chip>
+                            <mat-chip selected>Steel sheets</mat-chip>
+                        </mat-chip-set>
+                    </div>
+                </div>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="card" appearance="outlined">
+            <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
+            <mat-card-content>
+                <h5 class="title">Metals</h5>
+                <p class="matching-items">
+                Copper, aluminum, iron, steel, brass
+                </p>
+                <div class="price-box">
+                    <p class="price-label">Current Price:</p>
+                    <p class="price-range">$2.50 - $8.50/kg</p>
+                </div>
+                <div class="examples">
+                    <p class="example-label">Examples:</p>
+                    <div class="chips">
+                        <mat-chip-set>
+                            <mat-chip selected>Copper pipes</mat-chip>
+                            <mat-chip selected>Aluminum cans</mat-chip>
+                            <mat-chip selected>Steel sheets</mat-chip>
+                        </mat-chip-set>
+                    </div>
+                </div>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="additional-material-cta">
+        <p class="additional-material-note">Don't see your material? We accept many more items!</p>
+        <button class="view-all-items">View All Accepted Items</button>
+    </div>
+</section>

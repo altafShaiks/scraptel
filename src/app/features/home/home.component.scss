@@ -1,66 +1,58 @@
 @use '../../../assets/styles/theme.scss' as *;
+@use '../../../styles.scss' as *;
+@use '../../../assets/styles/variables.scss' as *;
+@use '../../../assets/styles/mixins.scss' as *;
 
+// Common
+.header {
+    @include text-center;
+    .heading {
+        font-size: $heading-font-size;
+        text-transform: capitalize;
+    }
+}
+
+
+.stats-section, .what-we-accept-section {
+    margin-top: $section-margin-top;
+}
+
+// Hero Section
 .hero-section {
-    height: auto;
     background-color: $background-color;
     position: relative;
-    padding: 10vw 20vw;
+    padding: calc($section-padding-y + 8vw) calc($section-padding-x + 16vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .container {
-        p {
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin-top: 4vh;
-            font-size: 3vh;
-            text-align: center;
-        }
+    .heading {
+        font-size: 8vh;
 
-        .tagline {
-            text-align: center;
+        span {
             font-size: 8vh;
-            text-transform: capitalize;
-            font-weight: 800;
-
-            span {
-                color: $primary-color;
-            }
+            font-weight: 700;
+            color: $primary-color;
         }
     }
+
     .action-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem;
-        margin-top: 2rem;
-    
-        button {
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-    
-            &.calculate-value-now {
-                background-color: $primary-color;
-                color: $light-color;
-    
-                &:hover {
-                    background-color: $primary-color-hover;
-                }
-            }
-    
-            &.how-it-works {
-                background-color: $secondary-color;
-                color: $light-color;
-    
-                &:hover {
-                    background-color: $secondary-color-hover;
-                }
-            }
+        gap: $buttons-gap;
+        margin: $buttons-margin;
+
+        button.calculate-value-now {
+            @include button-base($primary-color, $primary-color-hover, $light-color);
+        }
+        button.how-it-works {
+            @include button-base($secondary-color, $secondary-color-hover, $black);
         }
     }
-    
+}
+.hero-section {
     .why-scraptel {
-        margin-top: 2rem;
         ul {
             display: flex;
             flex-wrap: wrap;
@@ -68,167 +60,152 @@
             gap: 8vw;
             list-style-type: none;
     
-            li {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-    
+            li {    
                 .icon {
-                    margin-right: 1vh;
+                    margin-right: $icon-margin;
                 }
             }
         }
     }
 }
 
+// Stats Section
+.stats-section {
+  padding: $section-padding-y $section-padding-x 0;
+
+  .stats-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $cards-gap;
+    align-items: stretch;
+  }
+}
+
+$icons: (
+  users: $primary-color,
+  dollar: $secondary-color,
+  recycle: $primary-color,
+  graph_arrow: #5353f8
+);
 
 .stats-section {
-    .container {
+    .card {
+        flex: 1 1 calc(25% - #{$cards-gap});
+        min-width: 220px;
+        padding: $card-padding;
+        background-color: $white;
+        border: .1vw solid $light-color-hover;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 2rem;
-        padding: 1vw 4vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-        .card {
-            flex: 1 1 20%;
-            margin-top: 3rem;
-            padding: 5vh 10vh;
-            align-items: center;
-            background-color: $white;
-            border: .1vw solid $light-color-hover;
-
-            .icon-users {
+         @each $name, $color in $icons {
+            .icon-#{$name} {
                 font-size: 2.5em;
                 font-weight: 400;
+
                 &::before {
-                    color: $primary-color;
+                color: $color;
                 }
             }
+        }
 
-            .icon-dollar {
-                font-size: 2.5em;
-                font-weight: 400;
-                &::before {
-                    color: $secondary-color;
-                }
-            }
-
-            .icon-recycle {
-                font-size: 2.5em;
-                font-weight: 400;
-                &::before {
-                    color: $primary-color;
-                }
-            }
-
-            .icon-graph_arrow {
-                font-size: 2.5em;
-                font-weight: 400;
-                &::before {
-                    color: #5353f8;
-                }
-            }
-
-            .title {
-                margin-top: 30px;
-            }
-
-            p {
-                margin-top: 10px;
-            }
+        p {
+            margin-top: .3em;
+            @include text-center; 
         }
     }
 }
 
 .what-we-accept-section {
-    padding: 5vw 4vw;
-    text-align: center;
+    padding: $section-padding-y $section-padding-x 0;
 
-    .container {
+    .mat-mdc-card-content {
+        padding: 10px 0 0;
+    }
 
-        .category-cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 3rem;
-            text-align: start;
-        }
+    .heading {
+        margin-bottom: .3em;
+    }
 
-        .card {
-            margin-top: 2em;
-            padding: 2em;
-            flex: 1 1 30%;
+    .category-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $cards-gap;
+        @include text-start;
 
-            .item-img {
-                border-radius: .6em;
-                height: 30vh;
-                object-fit: cover;
-            }
-
-            .title {
-                margin-top: 1em;
-                font-weight: 400;
-            }
-
-            .price-box {
-                background-color: rgb($primary-color, 0.1);
-                padding: 1em;
-                margin-top: 1em;
-                border-radius: 15px;
-
-                .price-range {
-                    margin-top: 1em;
-                    font-weight: 800;
-                    color: $primary-color;
-                }
-            }
-
-            .examples {
-                .example-label {
-                    margin-top: 1em;
-                }
-            }
-
-            .cta-button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: .2em;
-                flex: 1 1 100%;
-                padding: .5em;
-                border: 1px solid rgb($primary-color, 0.2);
-                border-radius: 10px;
-                background-color: transparent;
-                font-size: 1em;
-                font-weight: 400;
-                cursor: pointer;
-            }
+        p.matching-items {
+            margin-bottom: .3em;
         }
     }
 }
+.what-we-accept-section {
+    .card {
+        padding: $card-padding;
+        flex: 1 1 30%;
 
-::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
-  .mdc-evolution-chip__action--primary::before {
-    border: none;
-    border-radius: 80px;
-    background-color: $disabled-color;
+        .item-img {
+            border-radius: $border-radius;
+            height: 30vh;
+            object-fit: cover;
+        }
+
+        .price-box {
+            background-color: rgba($primary-color, 0.1);
+            padding: $border-radius;
+            border-radius: 15px;
+            
+            p {
+                margin: 0;
+            }
+
+            .price-range {
+                margin-top: 1em;
+                font-weight: 800;
+                color: $primary-color;
+            }
+        }
+
+        .examples {
+            .example-label {
+                margin: 1em 0 0;
+                font-weight: 500;
+            }
+        }
+
+        .cta-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .2em;
+            flex: 1 1 100%;
+            padding: .5em;
+            border: 1px solid rgb($primary-color, 0.2);
+            border-radius: 10px;
+            background-color: transparent;
+            font-size: 1em;
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+}
+.what-we-accept-section {
+    .additional-material-cta {
+        @include text-center;
+
+        .additional-material-note {
+            margin-top: 2em;
+        }
+
+        .view-all-items {
+            @include button-base($primary-color, $primary-color-hover, $white);
+        }
+    }
 }
 
 // media queries
 @media (max-width: 600px) {
-    .hero-section {
-        padding: 10vw 8vw;
-        
-        .tagline {
-            font-size: 6vh;
-        }
-    
-        .action-buttons {
-            button {
-                font-size: .8rem;
-            }
-        }
-    }
-
 }

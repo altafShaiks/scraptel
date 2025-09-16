@@ -13,8 +13,11 @@
 }
 
 
-.stats-section, .what-we-accept-section {
+.stats-section,
+.what-we-accept-section,
+.how-it-works-section {
     margin-top: $section-margin-top;
+    padding: $section-padding-y $section-padding-x;
 }
 
 // Hero Section
@@ -71,7 +74,6 @@
 
 // Stats Section
 .stats-section {
-  padding: $section-padding-y $section-padding-x 0;
 
   .stats-cards {
     display: flex;
@@ -103,7 +105,7 @@ $icons: (
 
          @each $name, $color in $icons {
             .icon-#{$name} {
-                font-size: 2.5em;
+                font-size: $icon-font-size;
                 font-weight: 400;
 
                 &::before {
@@ -119,12 +121,8 @@ $icons: (
     }
 }
 
+// What we accept section
 .what-we-accept-section {
-    padding: $section-padding-y $section-padding-x 0;
-
-    .mat-mdc-card-content {
-        padding: 10px 0 0;
-    }
 
     .heading {
         margin-bottom: .3em;
@@ -202,6 +200,85 @@ $icons: (
 
         .view-all-items {
             @include button-base($primary-color, $primary-color-hover, $white);
+        }
+    }
+}
+
+// how-it-works-section
+.how-it-works-section {
+    background-color: rgba($background-color, 0.2);
+
+    .process-cards, .value-highlights, .value-highlights-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $cards-gap;
+        @include text-center;
+
+        .card {
+            flex: 1 1 20%;
+            padding: $card-padding;
+            background-color: $white;
+        }
+
+        .header-icon {
+            background-color: $primary-color;
+            font-size: calc(100% + $icon-font-size);
+            padding: .5rem;
+            border-radius: 50px;
+            color: $white;
+        }
+
+        mat-card-header {
+            display: flex;
+            justify-content: center;
+
+            .title {
+                margin-top: .8rem;
+            }
+        }
+
+        mat-card-footer {
+            .description-chips {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+
+                p{
+                    margin: 0;
+                }
+
+                .chip-description-icon {
+                    margin: $icon-margin;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+.how-it-works-section {
+
+    .value-highlights-wrapper {
+        flex-direction: column;
+        margin-top: 3rem;
+        background-color: $white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+
+        .mat-mdc-card {
+            box-shadow: none;
+        }
+
+        .header-icon {
+            font-size: $icon-font-size;
+        }
+
+    }
+    .value-highlights-cta {
+        .start-selling {
+            align-items: center;
+            @include button-base($primary-color, $primary-color-hover, $white);
+            margin-bottom: 2em;
         }
     }
 }

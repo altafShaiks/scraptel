@@ -68,3 +68,7 @@ span  { font-size: 1rem; font-weight: 400; }
 .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
     font-weight: 200;
 }
+
+.mat-mdc-card-content {
+    padding: 10px 0 0;
+}

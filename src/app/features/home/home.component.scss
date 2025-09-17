@@ -16,7 +16,8 @@
 .stats-section,
 .what-we-accept-section,
 .how-it-works-section,
-.what-our-customers-say {
+.what-our-customers-say-section,
+.ready-to-sell-section {
     margin-top: $section-margin-top;
     padding: $section-padding-y $section-padding-x;
 }
@@ -284,7 +285,8 @@ $icons: (
     }
 }
 
-.what-our-customers-say {
+// what-our-customers-say-section
+.what-our-customers-say-section {
 
     .ratings {
         display: flex;
@@ -317,6 +319,27 @@ $icons: (
 
     .reviewer-role {
         font-weight: 200;
+    }
+}
+
+// ready-tosell-section
+.ready-to-sell-section {
+    background-color: $background-color;
+    padding: calc(5% + $section-padding-y) $section-padding-x;
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $buttons-gap;
+
+        .start-selling {
+            @include button-base($primary-color, $primary-color-hover, $white);
+        }
+
+        .contact-us {
+            @include button-base($secondary-color, $secondary-color-hover, $white);
+        }
     }
 }
 

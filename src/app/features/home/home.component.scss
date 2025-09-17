@@ -8,14 +8,15 @@
     @include text-center;
     .heading {
         font-size: $heading-font-size;
-        text-transform: capitalize;
+        @include capitalize;
     }
 }
 
 
 .stats-section,
 .what-we-accept-section,
-.how-it-works-section {
+.how-it-works-section,
+.what-our-customers-say {
     margin-top: $section-margin-top;
     padding: $section-padding-y $section-padding-x;
 }
@@ -280,6 +281,42 @@ $icons: (
             @include button-base($primary-color, $primary-color-hover, $white);
             margin-bottom: 2em;
         }
+    }
+}
+
+.what-our-customers-say {
+
+    .ratings {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: $cards-gap;
+    }
+
+    .card {
+        flex: 1 1 30%;
+    }
+
+    .icon-star {
+        color: $primary-color;
+    }
+
+    mat-card-content, mat-card-footer {
+        padding: 16px;
+    }
+
+    .review {
+        font-style: italic;
+        font-weight: 100;
+    }
+
+    .reviewer-name, .reviewer-role {
+        margin: 0;
+    }
+
+    .reviewer-role {
+        font-weight: 200;
     }
 }
 

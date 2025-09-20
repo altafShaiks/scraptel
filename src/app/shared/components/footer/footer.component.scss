@@ -1,0 +1,51 @@
+@use '../../../../assets/styles/theme.scss' as *;
+@use '../../../../assets/styles/variables.scss' as *;
+@use '../../../../assets/styles/mixins.scss' as *;
+
+.footer {
+    padding: $section-padding-y $section-padding-x;
+    margin-top: $section-margin-top;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: $cards-gap;
+}
+
+.quick-links {
+    .heading {
+        font-size: 3vh;
+    }
+
+    .content {
+        li {
+            font-size: 2vh;
+            list-style-type: none;
+        }
+    }
+}
+
+.services {
+    .content {
+        li {
+            font-size: 2vh;
+            list-style-type: none;
+        }
+    }
+}
+
+.contact {
+    .phone-number, .mail-id {
+        display: flex;
+        align-items: center;
+    }
+    
+    .icon-phone::before, .icon-mail::before {
+        margin-right: .2em;
+        font-weight: 800;
+    }
+}
+
+.trademark {
+    @include text-center;
+    padding: 1em;
+}

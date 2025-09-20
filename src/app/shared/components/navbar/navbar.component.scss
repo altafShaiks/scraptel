@@ -1,5 +1,10 @@
 @use '../../../../assets/styles/theme.scss' as *;
 
+:host(.scrolled) .navbar {
+    background-color: rgba($white, 0.3);
+    backdrop-filter: blur(10px);
+}
+
 .navbar {
     height: 80px;
     width: 100%;
@@ -7,6 +12,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 1vw 4vw;
+    position: fixed;
+    z-index: 1;
+    background-color: $white;
 }
 
 .nav-links ul {
@@ -14,6 +22,11 @@
     justify-content: space-between;
     gap: 3vw;
     list-style-type: none;
+
+    a {
+        text-decoration: none;
+        color: $black;
+    }
 }
 
 .nav-buttons {
@@ -46,9 +59,24 @@
             display: none;
         }
     }
+
     .hamburger-menu {
         display: block;
         font-size: 30px;
-        cursor: pointer;
+    }
+
+    .menu-opened {
+        .navbar {
+            height: 50vh;
+            align-items: flex-start;
+            background-color: rgba($white, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .hamburger-menu {
+            display: none;
+        }
+
+        
     }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  @Input() isScrolled = false;
+  menuOpened: boolean = false;
+
+  @HostBinding('class.scrolled') get scrolledClass() {
+    return this.isScrolled;
+  }
+
+  openMenu() {
+    this.menuOpened = true;
+  }
+
+  setScrolled(value: boolean) {
+    this.isScrolled = value;
+  }
 
 }

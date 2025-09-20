@@ -1,18 +1,21 @@
-<div class="navbar">
-    <div class="nav-logo">
-        <h2>Scraptel</h2>
+<div [class.menu-opened]="menuOpened">
+    <div class="navbar">
+        <div class="nav-logo">
+            <h2>Scraptel</h2>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a class="home" href="">Home</a></li>
+                <li><a class="about" href="">About</a></li>
+                <li><a class="sell-scrap" href="">Sell Scrap</a></li>
+                <li><a class="contact" href="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <button class="login" type="submit">Login</button>
+            <button class="register" type="submit">Get Started</button>
+        </div>
+        <span class="hamburger-menu icon-hamburger" (click)="openMenu()"></span>
+        <span class="close icon-close"></span>
     </div>
-    <div class="nav-links">
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Sell Scrap</li>
-            <li>Contact</li>
-        </ul>
-    </div>
-    <div class="nav-buttons">
-        <button class="login" type="submit">Login</button>
-        <button class="register" type="submit">Get Started</button>
-    </div>
-    <span class="hamburger-menu icon-hamburger"></span>
 </div>

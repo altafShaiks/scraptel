@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
@@ -11,10 +11,6 @@ export class NavbarComponent {
   @Input() isScrolled = false;
   @Output() menuToggled = new EventEmitter<boolean>();
 
-  @HostBinding('class.scrolled') get scrolledClass() {
-    return this.isScrolled;
-  }
-
   menuOpened: boolean = false;
 
   openMenu() {
@@ -25,10 +21,6 @@ export class NavbarComponent {
   closeMenu() {
     this.menuOpened = false;
     this.menuToggled.emit(this.menuOpened);
-  }
-
-  setScrolled(value: boolean) {
-    this.isScrolled = value;
   }
 
 }

@@ -1,6 +1,6 @@
-<app-navbar [isScrolled]="isScrolled" (menuToggled)="onMenuToggled($event)"></app-navbar>
+<app-navbar [class.scrolled]="isScrolled" [isScrolled]="isScrolled" (menuToggled)="onMenuToggled($event)"></app-navbar>
 
-<section [class.menu-opened]="menuIsOpen">
+<div [class.menu-opened]="menuIsOpen">
     <!-- hero section -->
     <section class="hero-section">
         <div class="header">
@@ -413,4 +413,4 @@
 
     <!-- Footer -->
     <app-footer></app-footer>
-</section>
+</div>

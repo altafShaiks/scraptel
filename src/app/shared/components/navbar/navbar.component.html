@@ -2,13 +2,14 @@
     <div class="navbar">
         <div class="nav-logo">
             <h2>Scraptel</h2>
+            <span class="icon-close" (click)="closeMenu()"></span>
         </div>
         <div class="nav-links">
             <ul>
-                <li><a class="home" href="">Home</a></li>
-                <li><a class="about" href="">About</a></li>
-                <li><a class="sell-scrap" href="">Sell Scrap</a></li>
-                <li><a class="contact" href="">Contact</a></li>
+                <li><a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                <li><a routerLink="a" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a></li>
+                <li><a routerLink="a" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Sell Scrap</a></li>
+                <li><a routerLink="a" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Contact</a></li>
             </ul>
         </div>
         <div class="nav-buttons">
@@ -16,6 +17,5 @@
             <button class="register" type="submit">Get Started</button>
         </div>
         <span class="hamburger-menu icon-hamburger" (click)="openMenu()"></span>
-        <span class="close icon-close"></span>
     </div>
 </div>

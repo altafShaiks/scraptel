@@ -1,414 +1,416 @@
-<app-navbar [isScrolled]="isScrolled"></app-navbar>
+<app-navbar [isScrolled]="isScrolled" (menuToggled)="onMenuToggled($event)"></app-navbar>
 
-<!-- hero section -->
- <section class="hero-section">
-    <div class="header">
-      <h1 class="heading">turn your scrap into <span>cold hard cash</span></h1>
-      <p class="tagline">Get fair prices for your metal, electronics, plastic, and more. Free pickup, instant payment, and eco-friendly recycling.</p>
-    </div>
-    <div class="action-buttons">
-        <button class="calculate-value-now">Calculate value now</button>
-        <button class="how-it-works">How it works</button>
-    </div>
-        <div class="why-scraptel">
-            <ul>
-                <li>
-                    <span class="icon icon-secure"></span>
-                    Trusted & Secure
-                </li>
-                <li>
-                    <span class="icon icon-pickup"></span>
-                    Fast Pickup
-                </li>
-                <li>
-                    <span class="icon icon-dollar"></span>
-                    Best Prices
-                </li>
-            </ul>
+<section [class.menu-opened]="menuIsOpen">
+    <!-- hero section -->
+    <section class="hero-section">
+        <div class="header">
+        <h1 class="heading">turn your scrap into <span>cold hard cash</span></h1>
+        <p class="tagline">Get fair prices for your metal, electronics, plastic, and more. Free pickup, instant payment, and eco-friendly recycling.</p>
         </div>
- </section>
+        <div class="action-buttons">
+            <button class="calculate-value-now">Calculate value now</button>
+            <button class="how-it-works">How it works</button>
+        </div>
+            <div class="why-scraptel">
+                <ul>
+                    <li>
+                        <span class="icon icon-secure"></span>
+                        Trusted & Secure
+                    </li>
+                    <li>
+                        <span class="icon icon-pickup"></span>
+                        Fast Pickup
+                    </li>
+                    <li>
+                        <span class="icon icon-dollar"></span>
+                        Best Prices
+                    </li>
+                </ul>
+            </div>
+    </section>
 
- <!-- stats section -->
-<section class="stats-section">
-    <div class="stats-cards">
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title class="icon-users"></mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <h1 class="title">50k+</h1>
-            </mat-card-content>
-            <mat-card-footer>
-                <p>Happy Customers</p>
-            </mat-card-footer>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title class="icon-dollar"></mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <h1 class="title">$2.5M+</h1>
-            </mat-card-content>
-            <mat-card-footer>
-                <p>Paid to Sellers</p>
-            </mat-card-footer>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title class="icon-recycle"></mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <h1 class="title">100K+</h1>
-            </mat-card-content>
-            <mat-card-footer>
-                <p>Tons Recycled</p>
-            </mat-card-footer>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title class="icon-graph_arrow"></mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <h1 class="title">98%</h1>
-            </mat-card-content>
-            <mat-card-footer>
-                <p>Customer Satisfaction</p>
-            </mat-card-footer>
-        </mat-card>
-    </div>
-</section>
+    <!-- stats section -->
+    <section class="stats-section">
+        <div class="stats-cards">
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title class="icon-users"></mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h1 class="title">50k+</h1>
+                </mat-card-content>
+                <mat-card-footer>
+                    <p>Happy Customers</p>
+                </mat-card-footer>
+            </mat-card>
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title class="icon-dollar"></mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h1 class="title">$2.5M+</h1>
+                </mat-card-content>
+                <mat-card-footer>
+                    <p>Paid to Sellers</p>
+                </mat-card-footer>
+            </mat-card>
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title class="icon-recycle"></mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h1 class="title">100K+</h1>
+                </mat-card-content>
+                <mat-card-footer>
+                    <p>Tons Recycled</p>
+                </mat-card-footer>
+            </mat-card>
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title class="icon-graph_arrow"></mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h1 class="title">98%</h1>
+                </mat-card-content>
+                <mat-card-footer>
+                    <p>Customer Satisfaction</p>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </section>
 
-<!-- what we accept section  -->
-<section class="what-we-accept-section">
-    <div class="header">
-        <h1 class="heading">What We Accept</h1>
-        <p class="tagline">Turn your scrap into cash. We accept a wide variety of materials with competitive pricing.
-        </p>
-    </div>
-    <div class="category-cards">
-        <mat-card class="card" appearance="outlined">
-            <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
-            <mat-card-content>
-                <h5 class="title">Metals</h5>
-                <p class="matching-items">
-                Copper, aluminum, iron, steel, brass
-                </p>
-                <div class="price-box">
-                    <p class="price-label">Current Price:</p>
-                    <p class="price-range">$2.50 - $8.50/kg</p>
-                </div>
-                <div class="examples">
-                    <p class="example-label">Examples:</p>
-                    <div class="chips">
-                        <mat-chip-set>
-                            <mat-chip class="matching-item-name" selected>Copper pipes</mat-chip>
-                            <mat-chip class="matching-item-name" selected>Aluminum cans</mat-chip>
-                            <mat-chip class="matching-item-name" selected>Steel sheets</mat-chip>
-                        </mat-chip-set>
+    <!-- what we accept section  -->
+    <section class="what-we-accept-section">
+        <div class="header">
+            <h1 class="heading">What We Accept</h1>
+            <p class="tagline">Turn your scrap into cash. We accept a wide variety of materials with competitive pricing.
+            </p>
+        </div>
+        <div class="category-cards">
+            <mat-card class="card" appearance="outlined">
+                <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
+                <mat-card-content>
+                    <h5 class="title">Metals</h5>
+                    <p class="matching-items">
+                    Copper, aluminum, iron, steel, brass
+                    </p>
+                    <div class="price-box">
+                        <p class="price-label">Current Price:</p>
+                        <p class="price-range">$2.50 - $8.50/kg</p>
                     </div>
-                </div>
-
-            </mat-card-content>
-            <mat-card-actions>
-                <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
-            </mat-card-actions>
-        </mat-card>
-        <mat-card class="card" appearance="outlined">
-            <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
-            <mat-card-content>
-                <h5 class="title">Metals</h5>
-                <p class="matching-items">
-                Copper, aluminum, iron, steel, brass
-                </p>
-                <div class="price-box">
-                    <p class="price-label">Current Price:</p>
-                    <p class="price-range">$2.50 - $8.50/kg</p>
-                </div>
-                <div class="examples">
-                    <p class="example-label">Examples:</p>
-                    <div class="chips">
-                        <mat-chip-set>
-                            <mat-chip selected>Copper pipes</mat-chip>
-                            <mat-chip selected>Aluminum cans</mat-chip>
-                            <mat-chip selected>Steel sheets</mat-chip>
-                        </mat-chip-set>
+                    <div class="examples">
+                        <p class="example-label">Examples:</p>
+                        <div class="chips">
+                            <mat-chip-set>
+                                <mat-chip class="matching-item-name" selected>Copper pipes</mat-chip>
+                                <mat-chip class="matching-item-name" selected>Aluminum cans</mat-chip>
+                                <mat-chip class="matching-item-name" selected>Steel sheets</mat-chip>
+                            </mat-chip-set>
+                        </div>
                     </div>
-                </div>
 
-            </mat-card-content>
-            <mat-card-actions>
-                <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
-            </mat-card-actions>
-        </mat-card>
-        <mat-card class="card" appearance="outlined">
-            <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
-            <mat-card-content>
-                <h5 class="title">Metals</h5>
-                <p class="matching-items">
-                Copper, aluminum, iron, steel, brass
-                </p>
-                <div class="price-box">
-                    <p class="price-label">Current Price:</p>
-                    <p class="price-range">$2.50 - $8.50/kg</p>
-                </div>
-                <div class="examples">
-                    <p class="example-label">Examples:</p>
-                    <div class="chips">
-                        <mat-chip-set>
-                            <mat-chip selected>Copper pipes</mat-chip>
-                            <mat-chip selected>Aluminum cans</mat-chip>
-                            <mat-chip selected>Steel sheets</mat-chip>
-                        </mat-chip-set>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="card" appearance="outlined">
+                <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
+                <mat-card-content>
+                    <h5 class="title">Metals</h5>
+                    <p class="matching-items">
+                    Copper, aluminum, iron, steel, brass
+                    </p>
+                    <div class="price-box">
+                        <p class="price-label">Current Price:</p>
+                        <p class="price-range">$2.50 - $8.50/kg</p>
                     </div>
-                </div>
+                    <div class="examples">
+                        <p class="example-label">Examples:</p>
+                        <div class="chips">
+                            <mat-chip-set>
+                                <mat-chip selected>Copper pipes</mat-chip>
+                                <mat-chip selected>Aluminum cans</mat-chip>
+                                <mat-chip selected>Steel sheets</mat-chip>
+                            </mat-chip-set>
+                        </div>
+                    </div>
 
-            </mat-card-content>
-            <mat-card-actions>
-                <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-    <div class="additional-material-cta">
-        <p class="additional-material-note">Don't see your material? We accept many more items!</p>
-        <button class="view-all-items">View All Accepted Items</button>
-    </div>
-</section>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="card" appearance="outlined">
+                <img class="item-img" mat-card-image src="assets/images/iron.jpg" alt="iron">
+                <mat-card-content>
+                    <h5 class="title">Metals</h5>
+                    <p class="matching-items">
+                    Copper, aluminum, iron, steel, brass
+                    </p>
+                    <div class="price-box">
+                        <p class="price-label">Current Price:</p>
+                        <p class="price-range">$2.50 - $8.50/kg</p>
+                    </div>
+                    <div class="examples">
+                        <p class="example-label">Examples:</p>
+                        <div class="chips">
+                            <mat-chip-set>
+                                <mat-chip selected>Copper pipes</mat-chip>
+                                <mat-chip selected>Aluminum cans</mat-chip>
+                                <mat-chip selected>Steel sheets</mat-chip>
+                            </mat-chip-set>
+                        </div>
+                    </div>
 
-<!-- How It Works Section -->
-<section class="how-it-works-section">
-    <div class="header">
-        <h1 class="heading">How It Works</h1>
-        <p class="tagline">Our simple 4-step process makes selling your scrap materials easy and profitable.</p>
-    </div>
-    <div class="process-cards">
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title>
-                    <span class="header-icon icon-calc"></span>
-                    <h2 class="title">Calculate Value</h2>
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <p class="description">Use our pricing calculator to estimate your scrap's worth based on type and weight.</p>
-            </mat-card-content>
-            <mat-card-footer>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Select your scrap type</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Enter estimated weight</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Get instant pricing</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">No hidden fees</p>
-                </div>
-            </mat-card-footer>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title>
-                    <span class="header-icon icon-calc"></span>
-                    <h2 class="title">Calculate Value</h2>
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <p class="description">Use our pricing calculator to estimate your scrap's worth based on type and weight.</p>
-            </mat-card-content>
-            <mat-card-footer>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Select your scrap type</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Enter estimated weight</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Get instant pricing</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">No hidden fees</p>
-                </div>
-            </mat-card-footer>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title>
-                    <span class="header-icon icon-calc"></span>
-                    <h2 class="title">Calculate Value</h2>
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <p class="description">Use our pricing calculator to estimate your scrap's worth based on type and weight.</p>
-            </mat-card-content>
-            <mat-card-footer>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Select your scrap type</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Enter estimated weight</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Get instant pricing</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">No hidden fees</p>
-                </div>
-            </mat-card-footer>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title>
-                    <span class="header-icon icon-calc"></span>
-                    <h2 class="title">Calculate Value</h2>
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <p class="description">Use our pricing calculator to estimate your scrap's worth based on type and weight.</p>
-            </mat-card-content>
-            <mat-card-footer>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Select your scrap type</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Enter estimated weight</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">Get instant pricing</p>
-                </div>
-                <div class="description-chips">
-                    <span class="chip-description-icon icon-circle_tick"></span>
-                    <p class="chip-description-tag">No hidden fees</p>
-                </div>
-            </mat-card-footer>
-        </mat-card>
-    </div>
-    <div class="value-highlights-wrapper">
-        <div class="value-highlights">
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="cta-button">Get Quote <span class="icon-arrow"></span></button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div class="additional-material-cta">
+            <p class="additional-material-note">Don't see your material? We accept many more items!</p>
+            <button class="view-all-items">View All Accepted Items</button>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+        <div class="header">
+            <h1 class="heading">How It Works</h1>
+            <p class="tagline">Our simple 4-step process makes selling your scrap materials easy and profitable.</p>
+        </div>
+        <div class="process-cards">
             <mat-card class="card">
                 <mat-card-header>
                     <mat-card-title>
-                        <span class="header-icon icon-circle_tick"></span>
-                        <h2 class="title">Fair Pricing</h2>
+                        <span class="header-icon icon-calc"></span>
+                        <h2 class="title">Calculate Value</h2>
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <p class="description">Competitive market rates updated daily based on current scrap metal prices.</p>
+                    <p class="description">Use our pricing calculator to estimate your scrap's worth based on type and weight.</p>
                 </mat-card-content>
+                <mat-card-footer>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Select your scrap type</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Enter estimated weight</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Get instant pricing</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">No hidden fees</p>
+                    </div>
+                </mat-card-footer>
             </mat-card>
             <mat-card class="card">
                 <mat-card-header>
                     <mat-card-title>
-                        <span class="header-icon icon-circle_tick"></span>
-                        <h2 class="title">Fair Pricing</h2>
+                        <span class="header-icon icon-calc"></span>
+                        <h2 class="title">Calculate Value</h2>
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <p class="description">Competitive market rates updated daily based on current scrap metal prices.</p>
+                    <p class="description">Use our pricing calculator to estimate your scrap's worth based on type and weight.</p>
                 </mat-card-content>
+                <mat-card-footer>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Select your scrap type</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Enter estimated weight</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Get instant pricing</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">No hidden fees</p>
+                    </div>
+                </mat-card-footer>
             </mat-card>
             <mat-card class="card">
                 <mat-card-header>
                     <mat-card-title>
-                        <span class="header-icon icon-circle_tick"></span>
-                        <h2 class="title">Fair Pricing</h2>
+                        <span class="header-icon icon-calc"></span>
+                        <h2 class="title">Calculate Value</h2>
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
-                    <p class="description">Competitive market rates updated daily based on current scrap metal prices.</p>
+                    <p class="description">Use our pricing calculator to estimate your scrap's worth based on type and weight.</p>
                 </mat-card-content>
+                <mat-card-footer>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Select your scrap type</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Enter estimated weight</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Get instant pricing</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">No hidden fees</p>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title>
+                        <span class="header-icon icon-calc"></span>
+                        <h2 class="title">Calculate Value</h2>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p class="description">Use our pricing calculator to estimate your scrap's worth based on type and weight.</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Select your scrap type</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Enter estimated weight</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">Get instant pricing</p>
+                    </div>
+                    <div class="description-chips">
+                        <span class="chip-description-icon icon-circle_tick"></span>
+                        <p class="chip-description-tag">No hidden fees</p>
+                    </div>
+                </mat-card-footer>
             </mat-card>
         </div>
-        <div class="value-highlights-cta">
-            <button class="start-selling">Start Selling Your Scrap <span class="icon-arrow"></span></button>
+        <div class="value-highlights-wrapper">
+            <div class="value-highlights">
+                <mat-card class="card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <span class="header-icon icon-circle_tick"></span>
+                            <h2 class="title">Fair Pricing</h2>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="description">Competitive market rates updated daily based on current scrap metal prices.</p>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <span class="header-icon icon-circle_tick"></span>
+                            <h2 class="title">Fair Pricing</h2>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="description">Competitive market rates updated daily based on current scrap metal prices.</p>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <span class="header-icon icon-circle_tick"></span>
+                            <h2 class="title">Fair Pricing</h2>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="description">Competitive market rates updated daily based on current scrap metal prices.</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="value-highlights-cta">
+                <button class="start-selling">Start Selling Your Scrap <span class="icon-arrow"></span></button>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- What Our Customers Say section -->
+    <section class="what-our-customers-say-section">
+        <div class="header">
+            <h1 class="heading">What Our Customers Say</h1>
+            <p class="tagline">Join thousands of satisfied customers who trust Scraptel for their recycling needs.</p>
+        </div>
+        <div class="ratings">
+            <mat-card class="card">
+                <mat-card-header>
+                    @for (i of [0, 1, 2, 3, 4]; track i) {
+                        <mat-card-title
+                            class="icon-star"
+                        ></mat-card-title>
+                    }
+                </mat-card-header>
+                <mat-card-content>
+                    <p class="review">"Scraptel made it so easy to get rid of my old appliances. Fair pricing and professional service!"</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <h5 class="reviewer-name">Altaf Shaik</h5>
+                    <p class="reviewer-role">Dev Manager</p>
+                </mat-card-footer>
+            </mat-card>
+            <mat-card class="card">
+                <mat-card-header>
+                    @for (i of [0, 1, 2, 3, 4]; track i) {
+                        <mat-card-title
+                            class="icon-star"
+                        ></mat-card-title>
+                    }
+                </mat-card-header>
+                <mat-card-content>
+                    <p class="review">"Scraptel made it so easy to get rid of my old appliances. Fair pricing and professional service!"</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <h5 class="reviewer-name">Altaf Shaik</h5>
+                    <p class="reviewer-role">Dev Manager</p>
+                </mat-card-footer>
+            </mat-card>
+            <mat-card class="card">
+                <mat-card-header>
+                    @for (i of [0, 1, 2, 3, 4]; track i) {
+                        <mat-card-title
+                            class="icon-star"
+                        ></mat-card-title>
+                    }
+                </mat-card-header>
+                <mat-card-content>
+                    <p class="review">"Scraptel made it so easy to get rid of my old appliances. Fair pricing and professional service!"</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <h5 class="reviewer-name">Altaf Shaik</h5>
+                    <p class="reviewer-role">Dev Manager</p>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </section>
+
+    <!-- Ready to sell section -->
+    <section class="ready-to-sell-section">
+        <div class="header">
+            <h1 class="heading">Ready to Turn Trash Into Cash?</h1>
+            <p class="tagline">Start your eco-friendly journey today. Calculate your scrap value and schedule a pickup in minutes.</p>
+        </div>
+        <div class="cta-buttons">
+            <button class="start-selling">Start Selling Now <span class="icon-arrow"></span></button>
+            <button class="contact-us">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
 </section>
-
-<!-- What Our Customers Say section -->
- <section class="what-our-customers-say-section">
-    <div class="header">
-        <h1 class="heading">What Our Customers Say</h1>
-        <p class="tagline">Join thousands of satisfied customers who trust Scraptel for their recycling needs.</p>
-    </div>
-    <div class="ratings">
-        <mat-card class="card">
-            <mat-card-header>
-                @for (i of [0, 1, 2, 3, 4]; track i) {
-                    <mat-card-title
-                        class="icon-star"
-                    ></mat-card-title>
-                }
-            </mat-card-header>
-            <mat-card-content>
-                <p class="review">"Scraptel made it so easy to get rid of my old appliances. Fair pricing and professional service!"</p>
-            </mat-card-content>
-            <mat-card-footer>
-                <h5 class="reviewer-name">Altaf Shaik</h5>
-                <p class="reviewer-role">Dev Manager</p>
-            </mat-card-footer>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header>
-                @for (i of [0, 1, 2, 3, 4]; track i) {
-                    <mat-card-title
-                        class="icon-star"
-                    ></mat-card-title>
-                }
-            </mat-card-header>
-            <mat-card-content>
-                <p class="review">"Scraptel made it so easy to get rid of my old appliances. Fair pricing and professional service!"</p>
-            </mat-card-content>
-            <mat-card-footer>
-                <h5 class="reviewer-name">Altaf Shaik</h5>
-                <p class="reviewer-role">Dev Manager</p>
-            </mat-card-footer>
-        </mat-card>
-        <mat-card class="card">
-            <mat-card-header>
-                @for (i of [0, 1, 2, 3, 4]; track i) {
-                    <mat-card-title
-                        class="icon-star"
-                    ></mat-card-title>
-                }
-            </mat-card-header>
-            <mat-card-content>
-                <p class="review">"Scraptel made it so easy to get rid of my old appliances. Fair pricing and professional service!"</p>
-            </mat-card-content>
-            <mat-card-footer>
-                <h5 class="reviewer-name">Altaf Shaik</h5>
-                <p class="reviewer-role">Dev Manager</p>
-            </mat-card-footer>
-        </mat-card>
-    </div>
- </section>
-
- <!-- Ready to sell section -->
-  <section class="ready-to-sell-section">
-    <div class="header">
-        <h1 class="heading">Ready to Turn Trash Into Cash?</h1>
-        <p class="tagline">Start your eco-friendly journey today. Calculate your scrap value and schedule a pickup in minutes.</p>
-    </div>
-    <div class="cta-buttons">
-        <button class="start-selling">Start Selling Now <span class="icon-arrow"></span></button>
-        <button class="contact-us">Contact Us</button>
-    </div>
-  </section>
-
-<!-- Footer -->
- <app-footer></app-footer>

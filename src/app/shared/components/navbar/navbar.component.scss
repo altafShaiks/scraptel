@@ -1,4 +1,5 @@
 @use '../../../../assets/styles/theme.scss' as *;
+@use '../../../../assets/styles/mixins.scss' as *;
 
 :host(.scrolled) .navbar {
     background-color: rgba($white, 0.3);
@@ -6,14 +7,15 @@
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
     height: 80px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1vw 4vw;
-    position: fixed;
-    z-index: 1;
     background-color: $white;
 }
 
@@ -26,34 +28,40 @@
     a {
         text-decoration: none;
         color: $black;
+
+        &:hover {
+            color: $primary-color-hover;
+        }
+    }
+
+    .active-link {
+        color: $primary-color;
+        font-weight: 600;
     }
 }
 
 .nav-buttons {
-    .login, .register {
-        padding: .6vw;
-        margin-left: 1vw;
-        border-radius: .5vw;
-    }
-
+    display: flex;
+    gap: 1em;
     .login {
-        background-color: $white;
+        @include button-base($white, $secondary-color, $black);
         border: .1vw solid $light-color-hover;
+        font-size: 1em;
     }
 
     .register {
-        background-color: $primary-color;
-        color: $white;
-        border: none;
+        @include button-base($primary-color, $primary-color-hover, $white);
+        font-size: 1em;
     }
 }
 
-.hamburger-menu {
+.hamburger-menu, .icon-close {
     display: none;
 }
 
+
 // media queries
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .navbar {
         .nav-links ul, .nav-buttons {
             display: none;
@@ -67,16 +75,46 @@
 
     .menu-opened {
         .navbar {
-            height: 50vh;
+            height: 55vh;
+            display: flex;
+            flex-direction: column;
             align-items: flex-start;
+            padding: 4vw;
             background-color: rgba($white, 0.3);
             backdrop-filter: blur(10px);
+
+            .nav-logo {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .icon-close {
+                    margin-bottom: .5em;
+                }
+            }
+
+            .nav-links ul, .nav-buttons {
+                width: 100%;
+                display: flex;
+                gap: 1em;
+                flex-direction: column;
+            }
+
+            .nav-buttons {
+                .login, .register {
+                    padding: 10px;
+                }
+            }
         }
 
         .hamburger-menu {
             display: none;
         }
 
-        
+        .icon-close {
+            display: block;
+            font-size: 30px;
+        }
     }
 }

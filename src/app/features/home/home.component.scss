@@ -12,6 +12,10 @@
     }
 }
 
+.menu-opened {
+    padding-top: 45vh;
+}
+
 
 .stats-section,
 .what-we-accept-section,
@@ -25,7 +29,7 @@
 // Hero Section
 .hero-section {
     background-color: $background-color;
-    position: relative;
+    margin-top: 10vh;
     padding: calc($section-padding-y + 8vw) calc($section-padding-x + 16vw);
     display: flex;
     flex-direction: column;
@@ -335,14 +339,33 @@ $icons: (
 
         .start-selling {
             @include button-base($primary-color, $primary-color-hover, $white);
+            font-size: .8em;
         }
 
         .contact-us {
             @include button-base($secondary-color, $secondary-color-hover, $white);
+            font-size: .8em;
         }
     }
 }
 
 // media queries
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+    .hero-section {
+        padding: calc($section-padding-y + 2vw) calc($section-padding-x + 4vw);
+    }
+
+    .how-it-works-section {
+        .process-cards, .value-highlights, .value-highlights-wrapper {
+            .card {
+                flex: 1 1 50%;
+            }
+        }
+    }
+
+    .what-our-customers-say-section {
+        .card {
+            flex: 1 1 50%;
+        }
+    }
 }

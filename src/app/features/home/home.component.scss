@@ -16,7 +16,6 @@
     padding-top: 45vh;
 }
 
-
 .stats-section,
 .what-we-accept-section,
 .how-it-works-section,
@@ -308,10 +307,6 @@ $icons: (
         color: $primary-color;
     }
 
-    mat-card-content, mat-card-footer {
-        padding: 16px;
-    }
-
     .review {
         font-style: italic;
         font-weight: 100;
@@ -338,6 +333,9 @@ $icons: (
         gap: $buttons-gap;
 
         .start-selling {
+            display: flex;
+            align-items: center;
+            gap: .5vw;
             @include button-base($primary-color, $primary-color-hover, $white);
             font-size: .8em;
         }
@@ -366,6 +364,14 @@ $icons: (
     .what-our-customers-say-section {
         .card {
             flex: 1 1 50%;
+        }
+    }
+
+    .ready-to-sell-section {
+        .cta-buttons {
+            .start-selling, .contact-us {
+                padding: .5em !important;
+            }
         }
     }
 }

@@ -36,6 +36,15 @@
             list-style-type: none;
         }
     }
+
+    a {
+        text-decoration: none;
+        color: $black;
+
+        &:hover {
+            color: $primary-color-hover;
+        }
+    }
 }
 
 .services {

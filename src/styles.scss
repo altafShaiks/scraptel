@@ -54,7 +54,11 @@ p {
 small { font-size: 0.875rem; font-weight: 400; }
 span  { font-size: .8rem; font-weight: 400; }
 
-// Chips
+// Material
+mat-card-content, mat-card-footer {
+    padding: 16px;
+}
+
 .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__action--primary::before {
     border: none;
     border-radius: 80px;
@@ -67,10 +71,6 @@ span  { font-size: .8rem; font-weight: 400; }
 
 .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
     font-weight: 200;
-}
-
-.mat-mdc-card-content {
-    padding: 10px 0 0;
 }
 
 .mat-mdc-card-header-text {

@@ -1,0 +1,83 @@
+<app-navbar [class.scrolled]="isScrolled" [isScrolled]="isScrolled" (menuToggled)="onMenuToggled($event)"></app-navbar>
+
+<div [class.menu-opened]="menuIsOpen">
+    <!-- contact us section -->
+    <section class="contact-us-section">
+        <div class="header">
+            <h1 class="heading">Contact Us</h1>
+            <p class="tagline">Get in touch with our team. We're here to help with all your scrap recycling needs.</p>
+        </div>
+        <div class="contact-wrapper">
+            <div class="message-form">
+                <h2>Send us a Message</h2>
+                <div class="first-last-name">
+                    <div class="name-field">
+                        <label for="">First Name</label>
+                        <input type="text" id="first-name" name="" placeholder="Altaf">
+                    </div>
+                    <div class="name-field">
+                        <label for="">Last Name</label>
+                        <input type="text" id="last-name" name="" placeholder="Shaik">
+                    </div>
+                </div>
+                <div class="email">
+                    <label for="">Email</label>
+                    <input type="email" id="email" name="" placeholder="altaf@gmail.com">
+                </div>
+                <div class="phone">
+                    <label for="">Phone</label>
+                    <input type="text" id="phone" name="" placeholder="+91 123 456 7890">
+                </div>
+                <div class="subject">
+                    <label for="">Subject</label>
+                    <input type="text" id="subject" name="" placeholder="How can we help?">
+                </div>
+                <div class="message">
+                    <label for="">Message</label>
+                    <textarea name="" id="message" placeholder="Tell us about your scrap recycling needs..."></textarea>
+                </div>
+                <button class="button" type="submit">Send Message</button>
+            </div>
+            <div class="details-cards">
+                <mat-card class="card">
+                    <mat-card-header>
+                        <mat-card-title class="icon-location"></mat-card-title>
+                        <h4 class="heading">visit our office</h4>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="content">123 Recycling Avenue Eco City, EC 12345 United States</p>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="card">
+                    <mat-card-header>
+                        <mat-card-title class="icon-location"></mat-card-title>
+                        <h4 class="heading">visit our office</h4>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="content">123 Recycling Avenue Eco City, EC 12345 United States</p>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="card">
+                    <mat-card-header>
+                        <mat-card-title class="icon-location"></mat-card-title>
+                        <h4 class="heading">visit our office</h4>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="content">123 Recycling Avenue Eco City, EC 12345 United States</p>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="card">
+                    <mat-card-header>
+                        <mat-card-title class="icon-location"></mat-card-title>
+                        <h4 class="heading">visit our office</h4>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="content">123 Recycling Avenue Eco City, EC 12345 United States</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>
+</div>

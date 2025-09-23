@@ -23,6 +23,10 @@
   text-align: center;
 }
 
+@mixin text-end {
+  text-align: end;
+}
+
 @mixin capitalize {
   text-transform: capitalize;
 }

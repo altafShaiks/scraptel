@@ -13,8 +13,8 @@
             </ul>
         </div>
         <div class="nav-buttons">
-            <button routerLink="/login" class="login" type="submit">Login</button>
-            <button routerLink="/register" class="register" type="submit">Get Started</button>
+            <button class="login" matButton="elevated" (click)="openDialog('300ms', '150ms', 'login')">Login</button>
+            <button class="register" matButton="elevated" (click)="openDialog('300ms', '150ms', 'register')">Get Started</button>
         </div>
         <span class="hamburger-menu icon-hamburger" (click)="openMenu()"></span>
     </div>

@@ -47,7 +47,7 @@ h6 { font-size: 1.125rem; font-weight: 500; }
 p {
   font-family: "Roboto", "Open Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
   margin: 0 0 1em;
 }
@@ -75,4 +75,24 @@ mat-card-content, mat-card-footer {
 
 .mat-mdc-card-header-text {
   display: flex;
+}
+
+.custom-dialog-panel {
+    min-width: 35vw !important;
+
+    .mat-mdc-dialog-surface {
+      background-color: $white;
+    }
+}
+
+@media (max-width: 499px) {
+  .custom-dialog-panel {
+    min-width: 90vw !important;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1080px) {
+  .custom-dialog-panel {
+    min-width: 65vw !important;
+  }
 }

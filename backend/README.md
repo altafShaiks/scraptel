@@ -54,3 +54,60 @@ Example:
 - The phone number should be provided as a number and must be exactly 10 digits long.
 - Passwords are hashed before storage.
 - The JWT token is generated using the user's `_id` and a secret key stored in environment variables.
+
+### Endpoint
+`POST /login`
+
+### Request Body
+The request body must be in JSON format and include the following fields:
+
+- **email** (string): A valid email address.
+- **password** (string): The user's password. Must be at least 6 characters long.
+Example:
+```
+json {
+  "email": "john@example.com",
+  "password": "secret123"
+}
+```
+### Responses
+- **200 OK**
+  - Description: Successful authentication.
+  - Response Body:
+    ```json
+      {
+      "token": "<JWT token>",
+      "user": {
+        "_id": "<user id>",
+        "fullname": "John Doe",
+        "email": "john@example.com",
+        "phone": 1234567890
+      }
+    }
+    ```
+
+- **400 Bad Request**
+  - Description: One or more fields in the request body are missing or invalid.
+  - Response Body:
+    ```json
+    {
+      "errors": [
+        { "msg": "Invalid Email", "param": "email", "location": "body" },
+        { "msg": "Password must be at least 6 characters long", "param": "password", "location": "body" }
+      ]
+    }
+    ```
+
+- **401 Unauthorized**
+  - Description: The email or password provided is incorrect.
+  - Response Body:
+    ```json
+    {
+      "message": "Invalid email or password"
+    }
+    ```
+
+### Notes
+
+- Ensure that the email is in a valid format.
+- The password provided should match the one stored for the user after hashing.

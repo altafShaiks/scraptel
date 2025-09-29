@@ -1,0 +1,120 @@
+@use '../../../../assets/styles/theme.scss' as *;
+@use '../../../../assets/styles/mixins.scss' as *;
+
+:host(.scrolled) .navbar {
+    background-color: rgba($white, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 4vw;
+    background-color: $white;
+}
+
+.nav-links ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 3vw;
+    list-style-type: none;
+
+    a {
+        text-decoration: none;
+        color: $black;
+
+        &:hover {
+            color: $primary-color-hover;
+        }
+    }
+
+    .active-link {
+        color: $primary-color;
+        font-weight: 600;
+    }
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1em;
+    .login {
+        @include button-base($white, $secondary-color, $black);
+        border: .1vw solid $light-color-hover;
+        font-size: 1em;
+    }
+
+    .register {
+        @include button-base($primary-color, $primary-color-hover, $white);
+        font-size: 1em;
+    }
+}
+
+.hamburger-menu, .icon-close {
+    display: none;
+}
+
+
+// media queries
+@media (max-width: 800px) {
+    .navbar {
+        .nav-links ul, .nav-buttons {
+            display: none;
+        }
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 30px;
+    }
+
+    .menu-opened {
+        .navbar {
+            height: 55vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 4vw;
+            background-color: rgba($white, 0.3);
+            backdrop-filter: blur(10px);
+
+            .nav-logo {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .icon-close {
+                    margin-bottom: .5em;
+                }
+            }
+
+            .nav-links ul, .nav-buttons {
+                width: 100%;
+                display: flex;
+                gap: 1em;
+                flex-direction: column;
+            }
+
+            .nav-buttons {
+                .login, .register {
+                    padding: 10px;
+                }
+            }
+        }
+
+        .hamburger-menu {
+            display: none;
+        }
+
+        .icon-close {
+            display: block;
+            font-size: 30px;
+        }
+    }
+}

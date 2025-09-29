@@ -1,0 +1,21 @@
+<div [class.menu-opened]="menuOpened">
+    <div class="navbar">
+        <div class="nav-logo">
+            <h2>Scraptel</h2>
+            <span class="icon-close" (click)="closeMenu()"></span>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                <li><a routerLink="/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a></li>
+                <li><a routerLink="/a" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Sell Scrap</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <button class="login" matButton="elevated" (click)="openDialog('300ms', '150ms', 'login')">Login</button>
+            <button class="register" matButton="elevated" (click)="openDialog('300ms', '150ms', 'register')">Get Started</button>
+        </div>
+        <span class="hamburger-menu icon-hamburger" (click)="openMenu()"></span>
+    </div>
+</div>

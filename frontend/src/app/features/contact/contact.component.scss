@@ -1,0 +1,114 @@
+@use '../../../styles.scss' as *;
+@use '../../../assets/styles/mixins.scss' as *;
+@use '../../../assets/styles/theme.scss' as *;
+@use '../../../assets/styles/variables.scss' as *;
+
+// Common
+.header {
+    @include text-center;
+    .heading {
+        font-size: $heading-font-size;
+        @include capitalize;
+    }
+}
+
+.menu-opened {
+    padding-top: 45vh;
+}
+
+.contact-us-section {
+    margin-top: 12vh;
+    padding: $section-padding-y $section-padding-x;
+    background-color: rgba($background-color, .2);
+
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: $cards-gap;
+}
+
+.message-form {
+    background-color: $white;
+    margin-top: $section-margin-top;
+    padding: $card-padding;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: calc(3rem - $cards-gap);
+    border: .1vw solid $background-color;
+    border-radius: $border-radius;
+
+    .first-last-name {
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc( $cards-gap - 1rem );
+    }
+
+    label {
+        display: block;
+        font-weight: 500;
+    }
+}
+
+.message-form {
+    input, textarea {
+        padding: .8em;
+        border: .1em solid $background-color;
+        border-radius: 5px;
+    }
+
+    #email, #phone, #subject, #message {
+        width: 100%;
+    }
+}
+
+.message-form {
+    .button {
+        @include button-base($primary-color, $primary-color-hover, $white)
+    }
+}
+
+.details-cards {
+    margin-top: $section-margin-top;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+        background-color: $white;
+
+        mat-card-header {
+            align-items: end;
+        }
+
+        .heading {
+            font-weight: 600;
+            margin: 0 0 0 .8em;
+        }
+
+        .content {
+            width: 60%;
+        }
+    }
+}
+
+// media queries
+@media (max-width: 508px) {
+    .message-form {
+        .first-last-name {
+            .name-field {
+                width: 100%;
+
+                #first-name, #last-name {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

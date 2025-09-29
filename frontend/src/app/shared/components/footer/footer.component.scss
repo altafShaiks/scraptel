@@ -1,0 +1,92 @@
+@use '../../../../assets/styles/theme.scss' as *;
+@use '../../../../assets/styles/variables.scss' as *;
+@use '../../../../assets/styles/mixins.scss' as *;
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.scraptel-reminder {
+    width: 50%;
+    padding: $section-padding-y $section-padding-x;
+    margin-top: $section-margin-top;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-cta {
+    width: 50%;
+    padding: $section-padding-y $section-padding-x;
+    margin-top: $section-margin-top;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.quick-links {
+    flex: 1 1 20%;
+    .heading {
+        font-size: 3vh;
+    }
+
+    .content {
+        li {
+            font-size: 2vh;
+            list-style-type: none;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $black;
+
+        &:hover {
+            color: $primary-color-hover;
+        }
+    }
+}
+
+.services {
+    flex: 1 1 20%;
+    .content {
+        li {
+            font-size: 2vh;
+            list-style-type: none;
+        }
+    }
+}
+
+.contact {
+    flex: 1 1 20%;
+    .phone-number, .mail-id {
+        display: flex;
+        align-items: center;
+    }
+    
+    .icon-phone::before, .icon-mail::before {
+        margin-right: .2em;
+        font-weight: 800;
+    }
+}
+
+.trademark {
+    @include text-center;
+    padding: 1em;
+}
+
+@media (max-width: 800px) {
+    .scraptel-reminder {
+        width: 80%;
+    }
+
+    .footer-cta {
+        margin-top: 0;
+        width: 100%;
+        gap: 2em;
+    }
+
+    .quick-links, .services, .contact {
+        flex: 1 1 60%;
+    }    
+}

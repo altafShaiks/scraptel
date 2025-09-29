@@ -1,0 +1,377 @@
+@use '../../../assets/styles/theme.scss' as *;
+@use '../../../styles.scss' as *;
+@use '../../../assets/styles/variables.scss' as *;
+@use '../../../assets/styles/mixins.scss' as *;
+
+// Common
+.header {
+    @include text-center;
+    .heading {
+        font-size: $heading-font-size;
+        @include capitalize;
+    }
+}
+
+.menu-opened {
+    padding-top: 45vh;
+}
+
+.stats-section,
+.what-we-accept-section,
+.how-it-works-section,
+.what-our-customers-say-section,
+.ready-to-sell-section {
+    margin-top: $section-margin-top;
+    padding: $section-padding-y $section-padding-x;
+}
+
+// Hero Section
+.hero-section {
+    background-color: $background-color;
+    margin-top: 10vh;
+    padding: calc($section-padding-y + 8vw) calc($section-padding-x + 16vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .heading {
+        font-size: 8vh;
+
+        span {
+            font-size: 8vh;
+            font-weight: 700;
+            color: $primary-color;
+        }
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $buttons-gap;
+        margin: $buttons-margin;
+
+        button.calculate-value-now {
+            @include button-base($primary-color, $primary-color-hover, $light-color);
+        }
+        button.how-it-works {
+            @include button-base($secondary-color, $secondary-color-hover, $black);
+        }
+    }
+}
+.hero-section {
+    .why-scraptel {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8vw;
+            list-style-type: none;
+    
+            li {    
+                .icon {
+                    margin-right: $icon-margin;
+                }
+            }
+        }
+    }
+}
+
+// Stats Section
+.stats-section {
+
+  .stats-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $cards-gap;
+    align-items: stretch;
+  }
+}
+
+$icons: (
+  users: $primary-color,
+  dollar: $secondary-color,
+  recycle: $primary-color,
+  graph_arrow: #5353f8
+);
+
+.stats-section {
+    .card {
+        flex: 1 1 calc(25% - #{$cards-gap});
+        min-width: 220px;
+        padding: $card-padding;
+        background-color: $white;
+        border: .1vw solid $light-color-hover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+         @each $name, $color in $icons {
+            .icon-#{$name} {
+                font-size: $icon-font-size;
+                font-weight: 400;
+
+                &::before {
+                color: $color;
+                }
+            }
+        }
+
+        p {
+            margin-top: .3em;
+            @include text-center; 
+        }
+    }
+}
+
+// What we accept section
+.what-we-accept-section {
+
+    .heading {
+        margin-bottom: .3em;
+    }
+
+    .category-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $cards-gap;
+        @include text-start;
+
+        p.matching-items {
+            margin-bottom: .3em;
+        }
+    }
+}
+.what-we-accept-section {
+    .card {
+        padding: $card-padding;
+        flex: 1 1 30%;
+
+        .item-img {
+            border-radius: $border-radius;
+            height: 30vh;
+            object-fit: cover;
+        }
+
+        .price-box {
+            background-color: rgba($primary-color, 0.1);
+            padding: $border-radius;
+            border-radius: 15px;
+            
+            p {
+                margin: 0;
+            }
+
+            .price-range {
+                margin-top: 1em;
+                font-weight: 800;
+                color: $primary-color;
+            }
+        }
+
+        .examples {
+            .example-label {
+                margin: 1em 0 0;
+                font-weight: 500;
+            }
+        }
+
+        .cta-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .2em;
+            flex: 1 1 100%;
+            padding: .5em;
+            border: 1px solid rgb($primary-color, 0.2);
+            border-radius: 10px;
+            background-color: transparent;
+            font-size: 1em;
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+}
+.what-we-accept-section {
+    .additional-material-cta {
+        @include text-center;
+
+        .additional-material-note {
+            margin-top: 2em;
+        }
+
+        .view-all-items {
+            @include button-base($primary-color, $primary-color-hover, $white);
+        }
+    }
+}
+
+// how-it-works-section
+.how-it-works-section {
+    background-color: rgba($background-color, 0.2);
+
+    .process-cards, .value-highlights, .value-highlights-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $cards-gap;
+        @include text-center;
+
+        .card {
+            flex: 1 1 20%;
+            padding: $card-padding;
+            background-color: $white;
+        }
+
+        .header-icon {
+            background-color: $primary-color;
+            font-size: calc(100% + $icon-font-size);
+            padding: .5rem;
+            border-radius: 50px;
+            color: $white;
+        }
+
+        mat-card-header {
+            display: flex;
+            justify-content: center;
+
+            .title {
+                margin-top: .8rem;
+            }
+        }
+
+        mat-card-footer {
+            .description-chips {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+
+                p{
+                    margin: 0;
+                }
+
+                .chip-description-icon {
+                    margin: $icon-margin;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+.how-it-works-section {
+
+    .value-highlights-wrapper {
+        flex-direction: column;
+        margin-top: 3rem;
+        background-color: $white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+
+        .mat-mdc-card {
+            box-shadow: none;
+        }
+
+        .header-icon {
+            font-size: $icon-font-size;
+        }
+
+    }
+    .value-highlights-cta {
+        .start-selling {
+            align-items: center;
+            @include button-base($primary-color, $primary-color-hover, $white);
+            margin-bottom: 2em;
+        }
+    }
+}
+
+// what-our-customers-say-section
+.what-our-customers-say-section {
+
+    .ratings {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: $cards-gap;
+    }
+
+    .card {
+        flex: 1 1 30%;
+    }
+
+    .icon-star {
+        color: $primary-color;
+    }
+
+    .review {
+        font-style: italic;
+        font-weight: 100;
+    }
+
+    .reviewer-name, .reviewer-role {
+        margin: 0;
+    }
+
+    .reviewer-role {
+        font-weight: 200;
+    }
+}
+
+// ready-tosell-section
+.ready-to-sell-section {
+    background-color: $background-color;
+    padding: calc(5% + $section-padding-y) $section-padding-x;
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $buttons-gap;
+
+        .start-selling {
+            display: flex;
+            align-items: center;
+            gap: .5vw;
+            @include button-base($primary-color, $primary-color-hover, $white);
+            font-size: .8em;
+        }
+
+        .contact-us {
+            @include button-base($secondary-color, $secondary-color-hover, $white);
+            font-size: .8em;
+        }
+    }
+}
+
+// media queries
+@media (max-width: 800px) {
+    .hero-section {
+        padding: calc($section-padding-y + 2vw) calc($section-padding-x + 4vw);
+    }
+
+    .how-it-works-section {
+        .process-cards, .value-highlights, .value-highlights-wrapper {
+            .card {
+                flex: 1 1 50%;
+            }
+        }
+    }
+
+    .what-our-customers-say-section {
+        .card {
+            flex: 1 1 50%;
+        }
+    }
+
+    .ready-to-sell-section {
+        .cta-buttons {
+            .start-selling, .contact-us {
+                padding: .5em !important;
+            }
+        }
+    }
+}

@@ -8,7 +8,7 @@ const userRoutes = require('./routes/user.routes');
 
 connectToDb();
 
-app.use(cors());
+app.use(cors({ origin: process.env.FRONTEND_URL, optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 

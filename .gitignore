@@ -5,6 +5,7 @@ build/
 
 # Angular
 .angular/
+src/environments/environment*.ts
 
 # Logs
 npm-debug.log*

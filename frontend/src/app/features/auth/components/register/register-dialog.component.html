@@ -6,28 +6,28 @@
         <p class="tagline">Create your account and start turning scrap into cash today</p>
     </div>
     <div class="form">
-      <form action="">
+      <form [formGroup]="form" (ngSubmit)="registerUser()">
         <label class="full-name" for="">Full Name</label>
         <span class="icon-profile"></span>
-        <input type="text" placeholder="Enter your full name" name="" />
+        <input type="text" placeholder="Enter your full name" formControlName="fullname" />
         
         <label class="email" for="">Email Address</label>
         <span class="icon-mail"></span>
-        <input type="email" placeholder="Enter your email" name="" />
+        <input type="email" placeholder="Enter your email" formControlName="email" />
 
         <label class="phone-number" for="">Phone Number</label>
         <span class="icon-phone"></span>
-        <input type="number" placeholder="Enter your phone number" name="" />
+        <input type="number" placeholder="Enter your phone number" formControlName="phone" />
         
         <label class="password" for="">Password</label>
         <span class="icon-lock"></span>
-        <input type="password" placeholder="Create a password" name="" />
+        <input type="password" placeholder="Create a password" formControlName="password" />
 
         <label class="confirm-password" for="">Confirm Password</label>
         <span class="icon-lock"></span>
-        <input type="password" placeholder="Confirm your password" name="" />
+        <input type="password" placeholder="Confirm your password" formControlName="confirmpassword" />
 
-        <button class="create-account">Create Account</button>
+        <button class="create-account" type="submit">Create Account</button>
       </form>
     </div>
     <div class="already-have-account">
